@@ -4,5 +4,56 @@
   },
   "description": {
     "message": "Automatically skip ads on Hotstar, Amazon Prime Video, and YouTube"
+  },
+  "platform_prime": {
+    "message": "Prime Video"
+  },
+  "platform_hotstar": {
+    "message": "Hotstar"
+  },
+  "platform_youtube": {
+    "message": "YouTube"
+  },
+  "status_active_tab": {
+    "message": "Active on this tab"
+  },
+  "status_not_on_site": {
+    "message": "Not on this site"
+  },
+  "status_hotstar_enabled": {
+    "message": "Enabled when on Hotstar"
+  },
+  "badge_always_on": {
+    "message": "Always on"
+  },
+  "toggle_platform_ads": {
+    "message": "Platform ads"
+  },
+  "toggle_creator_promos": {
+    "message": "Creator promos"
+  },
+  "promo_open_video": {
+    "message": "Open a YouTube video to see detected promos"
+  },
+  "promo_no_detected": {
+    "message": "No promos detected in this video"
+  },
+  "promo_error": {
+    "message": "Could not analyze captions for this video"
+  },
+  "settings_link": {
+    "message": "Settings"
+  },
+  "options_title": {
+    "message": "Skipper Settings"
+  },
+  "desc_prime": {
+    "message": "Automatically skip and fast-forward ads on Amazon Prime Video."
+  },
+  "desc_hotstar": {
+    "message": "Hotstar ad skipping is always enabled on supported pages."
+  },
+  "desc_youtube": {
+    "message": "Skip platform ads and fast-forward sponsored segments detected from captions."
   }
 }

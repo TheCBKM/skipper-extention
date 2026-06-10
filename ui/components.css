@@ -1,0 +1,258 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--skipper-font);
+  background: var(--skipper-pink);
+  color: var(--skipper-ink);
+}
+
+.skipper-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--skipper-pink-soft);
+  border-bottom: var(--skipper-border);
+}
+
+.skipper-header__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--skipper-radius-sm);
+  border: var(--skipper-border);
+}
+
+.skipper-header__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.skipper-panel {
+  width: 320px;
+  max-height: 520px;
+  overflow-y: auto;
+  background: var(--skipper-pink);
+}
+
+.skipper-panel--wide {
+  width: 100%;
+  max-width: 480px;
+  max-height: none;
+}
+
+.skipper-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+}
+
+.platform-card {
+  background: var(--skipper-pink-soft);
+  border: var(--skipper-border);
+  border-radius: var(--skipper-radius-sm);
+  padding: 12px 14px;
+  transition: box-shadow 0.15s ease;
+}
+
+.platform-card--active {
+  box-shadow: var(--skipper-shadow);
+}
+
+.platform-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.platform-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.platform-card__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--skipper-status-idle);
+  flex-shrink: 0;
+}
+
+.platform-card--active .platform-card__status-dot {
+  background: var(--skipper-status-active);
+}
+
+.platform-card__name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.platform-card__status-text {
+  margin: 4px 0 0 16px;
+  font-size: 12px;
+  color: var(--skipper-ink-muted);
+}
+
+.platform-card__badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--skipper-ink-muted);
+}
+
+.platform-card__body {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.platform-card__sub-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.platform-card__description {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--skipper-ink-muted);
+  line-height: 1.4;
+}
+
+.promo-list {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.promo-list__item {
+  padding: 8px 10px;
+  border: var(--skipper-border);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--skipper-pink);
+}
+
+.promo-list__empty {
+  margin: 0;
+  font-size: 12px;
+  color: var(--skipper-ink-muted);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch__slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1.5px solid var(--skipper-ink);
+  transition: background 0.2s ease;
+}
+
+.switch__slider::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 2px;
+  bottom: 2px;
+  border-radius: 50%;
+  background: var(--skipper-ink);
+  transition: transform 0.2s ease;
+}
+
+.switch input:checked + .switch__slider {
+  background: var(--skipper-ink);
+}
+
+.switch input:checked + .switch__slider::before {
+  transform: translateX(14px);
+  background: var(--skipper-pink);
+}
+
+.skipper-footer {
+  padding: 10px 12px 14px;
+  border-top: var(--skipper-border);
+}
+
+.skipper-footer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--skipper-ink);
+  text-decoration: none;
+}
+
+.skipper-footer__link:hover {
+  text-decoration: underline;
+}
+
+.skipper-loader {
+  width: 28px;
+  height: 28px;
+  margin: 8px auto;
+  animation: skipper-spin 1s linear infinite;
+}
+
+.skipper-loader svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes skipper-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.options-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 16px;
+}
+
+.options-shell {
+  width: 100%;
+  max-width: 480px;
+  background: var(--skipper-pink-soft);
+  border: var(--skipper-border);
+  border-radius: var(--skipper-radius);
+  box-shadow: var(--skipper-shadow);
+  overflow: hidden;
+}
+
+.options-shell .skipper-cards {
+  padding: 16px;
+}

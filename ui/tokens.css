@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --skipper-pink: #ffc1c1;
+  --skipper-pink-soft: #ffe0e0;
+  --skipper-pink-deep: #f5a8a8;
+  --skipper-ink: #000000;
+  --skipper-ink-muted: rgba(0, 0, 0, 0.55);
+  --skipper-radius: 16px;
+  --skipper-radius-sm: 10px;
+  --skipper-border: 2px solid var(--skipper-ink);
+  --skipper-shadow: 3px 3px 0 var(--skipper-ink);
+  --skipper-font: 'DM Sans', 'Segoe UI', sans-serif;
+  --skipper-status-active: #1a7f37;
+  --skipper-status-idle: rgba(0, 0, 0, 0.35);
+}
