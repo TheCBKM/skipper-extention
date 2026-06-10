@@ -96,7 +96,7 @@ Sends YouTube caption text and video metadata to our server solely to detect cre
 
 ---
 
-## Privacy policy URL (fill in after hosting)
+## Privacy policy URL
 
 ```
 https://thecbkm.github.io/skipper-extention/privacy-policy.html
@@ -110,8 +110,9 @@ Update the domain if you host elsewhere.
 
 | Field | URL |
 |-------|-----|
-| Homepage | `https://github.com/TheCBKM/skipper-extention` |
-| Support | `https://github.com/TheCBKM/skipper-extention/issues` |
+| Homepage | `https://thecbkm.github.io/skipper-extention/` |
+| Support | `https://thecbkm.github.io/skipper-extention/support.html` |
+| GitHub (issues) | `https://github.com/TheCBKM/skipper-extention/issues` |
 
 ---
 

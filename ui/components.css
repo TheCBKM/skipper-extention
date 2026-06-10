@@ -207,10 +207,15 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
   font-size: 13px;
   font-weight: 600;
   color: var(--skipper-ink);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .skipper-footer__link:hover {

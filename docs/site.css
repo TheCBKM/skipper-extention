@@ -1,0 +1,235 @@
+:root {
+  --skipper-pink: #ffc1c1;
+  --skipper-pink-soft: #ffe0e0;
+  --skipper-pink-deep: #f5a8a8;
+  --skipper-ink: #000000;
+  --skipper-ink-muted: rgba(0, 0, 0, 0.55);
+  --skipper-radius: 16px;
+  --skipper-radius-sm: 10px;
+  --skipper-border: 2px solid var(--skipper-ink);
+  --skipper-shadow: 3px 3px 0 var(--skipper-ink);
+  --skipper-font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --skipper-max-width: 880px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--skipper-font);
+  color: var(--skipper-ink);
+  background: var(--skipper-pink);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--skipper-ink);
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.site-header {
+  background: var(--skipper-pink-soft);
+  border-bottom: var(--skipper-border);
+}
+
+.site-header__inner,
+.site-main,
+.site-footer__inner {
+  max-width: var(--skipper-max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 72px;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.site-brand__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--skipper-radius-sm);
+  border: var(--skipper-border);
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.site-nav a {
+  text-decoration: none;
+}
+
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.site-main {
+  padding: 2rem 1.25rem 3rem;
+}
+
+.hero {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.hero__card,
+.card,
+.panel {
+  background: var(--skipper-pink-soft);
+  border: var(--skipper-border);
+  border-radius: var(--skipper-radius);
+  box-shadow: var(--skipper-shadow);
+  padding: 1.5rem;
+}
+
+.hero__title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.hero__subtitle,
+.lead {
+  margin: 0;
+  color: var(--skipper-ink-muted);
+  font-size: 1.05rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.6rem 1rem;
+  border: var(--skipper-border);
+  border-radius: 999px;
+  background: var(--skipper-ink);
+  color: var(--skipper-pink);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--skipper-ink);
+}
+
+.button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--skipper-ink);
+}
+
+.button--secondary {
+  background: var(--skipper-pink-soft);
+  color: var(--skipper-ink);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card__title {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.card p,
+.panel p,
+.panel ul,
+.panel ol {
+  margin: 0 0 1rem;
+}
+
+.card p:last-child,
+.panel p:last-child,
+.panel ul:last-child,
+.panel ol:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+}
+
+.faq dt {
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.faq dt:first-child {
+  margin-top: 0;
+}
+
+.faq dd {
+  margin: 0.35rem 0 0;
+  color: var(--skipper-ink-muted);
+}
+
+.site-footer {
+  border-top: var(--skipper-border);
+  background: var(--skipper-pink-soft);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--skipper-ink-muted);
+}
+
+.site-footer a {
+  color: inherit;
+}
+
+@media (min-width: 760px) {
+  .hero {
+    grid-template-columns: auto 1fr;
+  }
+
+  .hero__icon {
+    width: 96px;
+    height: 96px;
+  }
+}

@@ -4,6 +4,7 @@ import { detectPlatformFromUrl } from '../core/platform-registry.js';
 import { getSettings } from '../core/settings.js';
 import { createLogger } from '../core/logger.js';
 import { handleGetYoutubePromos, initYoutubeTabWatcher } from './services/youtube.js';
+import { getContextTab } from './tab-context.js';
 
 const log = createLogger('background');
 
@@ -23,11 +24,19 @@ chrome.runtime.onInstalled.addListener(() => {
 
 initYoutubeTabWatcher();
 
+async function handleGetContextTab(sendResponse) {
+  const tab = await getContextTab();
+  sendResponse({ tab });
+}
+
 async function handleGetTabStatus(request, sendResponse) {
-  const platform = detectPlatformFromUrl(request.url ?? '');
+  const tab = request.tab ?? (await getContextTab());
+  const url = request.url ?? tab?.url ?? '';
+  const platform = detectPlatformFromUrl(url);
   const settings = await getSettings();
 
   sendResponse({
+    tab,
     activePlatformId: platform?.id ?? null,
     settings,
   });
@@ -52,6 +61,10 @@ chrome.storage.onChanged.addListener((changes, areaName) => {
 
 chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
   switch (request.type) {
+    case MessageType.GET_CONTEXT_TAB:
+      handleGetContextTab(sendResponse);
+      return true;
+
     case MessageType.GET_TAB_STATUS:
       handleGetTabStatus(request, sendResponse);
       return true;
