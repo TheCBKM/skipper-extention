@@ -1,10 +1,6 @@
 const OVERLAY_ID = 'skipper-overlay-div';
 
-function getFastForwardingText() {
-  return Math.floor(Math.random() * 10) === 0
-    ? 'buymeacoffee.com/soleh'
-    : 'Fast forwarding the promo...';
-}
+const OVERLAY_MESSAGE = 'Fast forwarding the promo...';
 
 export function attachFastForwardingText(videoPlayer) {
   if (document.getElementById(OVERLAY_ID) || !videoPlayer) return;
@@ -29,7 +25,7 @@ export function attachFastForwardingText(videoPlayer) {
   ].join(';');
 
   const textElement = document.createElement('p');
-  textElement.textContent = getFastForwardingText();
+  textElement.textContent = OVERLAY_MESSAGE;
   textElement.style.cssText = 'font-size:28px;font-weight:bold;margin:0';
   overlayDiv.appendChild(textElement);
   document.body.appendChild(overlayDiv);

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skipper Extension — Privacy Policy</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #111; }
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+    a { color: #111; }
+  </style>
+</head>
+<body>
+  <h1>Skipper — Privacy Policy</h1>
+  <p><strong>Last updated:</strong> June 10, 2026</p>
+
+  <p>
+    Skipper (“the Extension”) helps you skip or fast-forward advertisements on supported
+    streaming websites. This policy explains what data the Extension accesses, stores,
+    and transmits.
+  </p>
+
+  <h2>Data we access</h2>
+  <ul>
+    <li><strong>Settings you choose</strong> — toggle preferences (e.g. skip Prime ads, skip YouTube promos) are stored locally in Chrome sync storage.</li>
+    <li><strong>Supported website pages</strong> — the Extension runs only on Hotstar, Amazon Prime Video, and YouTube pages listed in the Extension manifest. It reads page DOM elements needed to detect and skip ads.</li>
+    <li><strong>YouTube captions (optional feature)</strong> — to detect creator promo segments, the Extension may read publicly available caption text and video description from the YouTube watch page you are viewing.</li>
+  </ul>
+
+  <h2>Data we transmit</h2>
+  <ul>
+    <li>
+      <strong>YouTube promo detection service</strong> — when you open a YouTube watch page and creator-promo skipping is enabled, caption words, timestamps, video ID, and video description may be sent to our backend at
+      <code>youtube-skip-ads-please-oregon.onrender.com</code> to identify sponsored segments. No account login is required.
+    </li>
+    <li>
+      <strong>Crowdsourced promo reports</strong> — if you manually report a promo segment (when that feature is enabled), start/end times and video ID may be sent to the same service.
+    </li>
+  </ul>
+
+  <h2>Data we do not collect</h2>
+  <ul>
+    <li>We do not require you to create an account.</li>
+    <li>We do not collect your name, email, or payment information through the Extension.</li>
+    <li>We do not track your browsing history outside the supported sites above.</li>
+    <li>We do not sell personal data.</li>
+  </ul>
+
+  <h2>Data storage</h2>
+  <p>
+    Settings are stored via <code>chrome.storage.sync</code>. YouTube promo detection results
+    are cached locally in <code>chrome.storage.local</code> for up to 2 hours per video to
+    reduce network requests.
+  </p>
+
+  <h2>Third parties</h2>
+  <p>
+    The Extension interacts with streaming sites you visit (Hotstar, Amazon, YouTube) and
+    our promo-detection API hosted on Render. Those services have their own privacy policies.
+  </p>
+
+  <h2>Children</h2>
+  <p>The Extension is not directed at children under 13.</p>
+
+  <h2>Changes</h2>
+  <p>We may update this policy. The “Last updated” date will change when we do.</p>
+
+  <h2>Contact</h2>
+  <p>
+  Questions about this policy:
+  <a href="https://github.com/TheCBKM/skipper-extention/issues">GitHub Issues</a>
+  </p>
+</body>
+</html>
