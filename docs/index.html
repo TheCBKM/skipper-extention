@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skipper automatically skips and fast-forwards ads on Hotstar, Prime Video, and YouTube.">
+  <title>Skipper — Skip Video Ads</title>
+  <link rel="icon" href="icons/128.png" type="image/png">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-brand" href="index.html">
+        <img class="site-brand__icon" src="icons/128.png" alt="">
+        <span>Skipper</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="https://github.com/TheCBKM/skipper-extention">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="hero">
+      <img class="hero__icon site-brand__icon" src="icons/128.png" alt="Skipper icon">
+      <div class="hero__card">
+        <h1 class="hero__title">Skip the ads. Keep the show.</h1>
+        <p class="hero__subtitle">
+          Skipper is a Chrome extension that automatically skips or fast-forwards advertisements
+          on Hotstar, Amazon Prime Video, and YouTube while you watch.
+        </p>
+        <div class="hero__actions">
+          <a class="button" id="install-link" href="https://chromewebstore.google.com/" rel="noopener">
+            Add to Chrome
+          </a>
+          <a class="button button--secondary" href="support.html">Get support</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid grid--3" aria-labelledby="platforms-title">
+      <h2 class="section-title" id="platforms-title" style="grid-column: 1 / -1;">Supported platforms</h2>
+
+      <article class="card">
+        <h3 class="card__title">Hotstar</h3>
+        <p>Automatically skips ad video segments when they appear in the player.</p>
+      </article>
+
+      <article class="card">
+        <h3 class="card__title">Prime Video</h3>
+        <p>Skips and fast-forwards Amazon Prime Video ads with a simple on/off toggle.</p>
+      </article>
+
+      <article class="card">
+        <h3 class="card__title">YouTube</h3>
+        <p>Skips platform ads and fast-forwards creator promo segments detected from captions.</p>
+      </article>
+    </section>
+
+    <section class="panel" style="margin-top: 1.5rem;" aria-labelledby="how-title">
+      <h2 class="section-title" id="how-title">How it works</h2>
+      <ol>
+        <li>Install Skipper from the Chrome Web Store.</li>
+        <li>Pin the extension to your toolbar.</li>
+        <li>Open a supported streaming site and start watching.</li>
+        <li>Use the Skipper popup to see which platform is active and adjust toggles anytime.</li>
+      </ol>
+      <p class="lead">
+        Skipper only runs on supported sites. It does not require an account and stores your
+        preferences in Chrome sync storage.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>Skipper — Skip Video Ads</span>
+      <span>
+        <a href="support.html">Support</a>
+        ·
+        <a href="privacy-policy.html">Privacy</a>
+        ·
+        <a href="https://github.com/TheCBKM/skipper-extention/issues">Report an issue</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+  // Replace with your Chrome Web Store listing URL after publication.
+  const STORE_URL = 'https://chromewebstore.google.com/';
+  const installLink = document.getElementById('install-link');
+  if (installLink && window.location.search.includes('store=')) {
+    installLink.href = decodeURIComponent(new URLSearchParams(window.location.search).get('store'));
+  }
+  </script>
+</body>
+</html>

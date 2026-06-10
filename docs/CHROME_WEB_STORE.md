@@ -37,9 +37,11 @@ Chrome requires a **public HTTPS URL** because Skipper:
 1. Push `docs/privacy-policy.html` to `main`
 2. Repo → **Settings** → **Pages**
 3. Source: **Deploy from branch** → `main` → `/docs`
-4. Your privacy URL will be:
+4. Your site URLs will be:
 
-   `https://thecbkm.github.io/skipper-extention/privacy-policy.html`
+   - Homepage: `https://thecbkm.github.io/skipper-extention/`
+   - Support: `https://thecbkm.github.io/skipper-extention/support.html`
+   - Privacy: `https://thecbkm.github.io/skipper-extention/privacy-policy.html`
 
    (Replace `TheCBKM` if your GitHub username/org differs.)
 

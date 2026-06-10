@@ -22,7 +22,11 @@ Upload `dist/skipper-v<version>.zip` to the [Chrome Web Store Developer Dashboar
 
 See **[docs/CHROME_WEB_STORE.md](docs/CHROME_WEB_STORE.md)** for the full step-by-step guide and **[docs/STORE_LISTING.md](docs/STORE_LISTING.md)** for copy-paste listing content.
 
-Privacy policy (host before publishing): [docs/privacy-policy.html](docs/privacy-policy.html)
+Hosted site (enable GitHub Pages from `/docs` before publishing):
+
+- Homepage: `https://thecbkm.github.io/skipper-extention/`
+- Support: `https://thecbkm.github.io/skipper-extention/support.html`
+- Privacy: `https://thecbkm.github.io/skipper-extention/privacy-policy.html`
 
 ## Project structure
 

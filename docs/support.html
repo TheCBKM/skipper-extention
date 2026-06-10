@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get help with Skipper — troubleshooting, FAQs, and issue reporting.">
+  <title>Skipper Support</title>
+  <link rel="icon" href="icons/128.png" type="image/png">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-brand" href="index.html">
+        <img class="site-brand__icon" src="icons/128.png" alt="">
+        <span>Skipper</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="support.html" aria-current="page">Support</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="https://github.com/TheCBKM/skipper-extention">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="hero__card" style="margin-bottom: 1.5rem;">
+      <h1 class="hero__title">Support</h1>
+      <p class="lead">
+        Need help with Skipper? Start with the FAQs below. If you are still stuck, open a
+        GitHub issue with your browser version, the site you were on, and what you expected to happen.
+      </p>
+      <div class="hero__actions">
+        <a class="button" href="https://github.com/TheCBKM/skipper-extention/issues/new">Report an issue</a>
+        <a class="button button--secondary" href="index.html">Back to home</a>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="faq-title">
+      <h2 class="section-title" id="faq-title">Frequently asked questions</h2>
+      <dl class="faq">
+        <dt>Which sites does Skipper support?</dt>
+        <dd>Hotstar, Amazon Prime Video (including regional Amazon domains), and YouTube watch pages.</dd>
+
+        <dt>How do I turn features on or off?</dt>
+        <dd>Click the Skipper icon in your Chrome toolbar. Use the toggles in the popup for Prime Video and YouTube. Hotstar skipping is always enabled on supported pages.</dd>
+
+        <dt>The popup shows the wrong site or “Not on this site”</dt>
+        <dd>Make sure the streaming tab is the one you were viewing when you opened the popup. Reload the extension at <code>chrome://extensions</code> and try again.</dd>
+
+        <dt>YouTube promos are not detected</dt>
+        <dd>Open a YouTube <strong>watch</strong> page (<code>youtube.com/watch?v=...</code>), enable creator promos in the popup, and wait a few seconds. Some videos have no captions or no detectable promos.</dd>
+
+        <dt>Prime Video ads are not skipping</dt>
+        <dd>Confirm “Skip Prime Video ads” is enabled in the popup. Amazon sometimes changes its player UI; if skipping stops working after an Amazon update, report it on GitHub.</dd>
+
+        <dt>Does Skipper work in Incognito?</dt>
+        <dd>Only if you enable Skipper for Incognito in <code>chrome://extensions</code> → Skipper → Details.</dd>
+
+        <dt>Is my data collected?</dt>
+        <dd>Skipper stores your settings in Chrome. YouTube promo detection may send caption text and video metadata to our backend only for that feature. See the <a href="privacy-policy.html">privacy policy</a> for details.</dd>
+      </dl>
+    </section>
+
+    <section class="panel" style="margin-top: 1rem;" aria-labelledby="troubleshooting-title">
+      <h2 class="section-title" id="troubleshooting-title">Troubleshooting checklist</h2>
+      <ol>
+        <li>Reload Skipper on <code>chrome://extensions</code>.</li>
+        <li>Refresh the streaming tab after installing or updating Skipper.</li>
+        <li>Check that the site is one of the supported platforms.</li>
+        <li>Open the Skipper popup and verify the correct platform card is highlighted.</li>
+        <li>Disable other ad-blocking extensions temporarily to rule out conflicts.</li>
+      </ol>
+    </section>
+
+    <section class="panel" style="margin-top: 1rem;" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <p>
+        For bugs and feature requests, use
+        <a href="https://github.com/TheCBKM/skipper-extention/issues">GitHub Issues</a>.
+        Include your Chrome version, operating system, the URL of the page, and steps to reproduce.
+      </p>
+      <p>
+        For privacy questions, see the <a href="privacy-policy.html">privacy policy</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <span>Skipper — Skip Video Ads</span>
+      <span>
+        <a href="index.html">Home</a>
+        ·
+        <a href="privacy-policy.html">Privacy</a>
+        ·
+        <a href="https://github.com/TheCBKM/skipper-extention/issues">Report an issue</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

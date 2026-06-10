@@ -6,7 +6,14 @@ import { renderPlatformCards, renderPromoList, showPromoLoader } from './platfor
 const root = document.getElementById('platform-cards-root');
 
 async function getActiveTab() {
-  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  try {
+    const { tab } = await sendMessageAsync({ type: MessageType.GET_CONTEXT_TAB });
+    if (tab) return tab;
+  } catch {
+    // Fall through to tabs.query below.
+  }
+
+  const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
   return tab ?? null;
 }
 
@@ -19,12 +26,13 @@ async function loadTabStatus() {
   try {
     const response = await sendMessageAsync({
       type: MessageType.GET_TAB_STATUS,
-      tabId: tab.id,
+      tab,
       url: tab.url,
     });
     return {
-      activePlatformId: response?.activePlatformId ?? detectPlatformFromUrl(tab.url)?.id ?? null,
-      tab,
+      activePlatformId:
+        response?.activePlatformId ?? detectPlatformFromUrl(tab.url)?.id ?? null,
+      tab: response?.tab ?? tab,
     };
   } catch {
     return {
@@ -53,7 +61,7 @@ async function fetchYoutubePromos(tab) {
   }
 }
 
-function bindToggles(settings) {
+function bindToggles() {
   const primeToggle = document.getElementById('toggle-prime');
   primeToggle?.addEventListener('change', async (event) => {
     await updatePlatformSettings('prime', { skipAds: event.target.checked });
@@ -82,24 +90,34 @@ async function render() {
   }
 }
 
-document.getElementById('open-options').addEventListener('click', (event) => {
-  event.preventDefault();
+document.getElementById('open-options')?.addEventListener('click', () => {
   chrome.runtime.openOptionsPage();
 });
 
 subscribe((newSettings) => {
-  document.getElementById('toggle-prime') &&
-    (document.getElementById('toggle-prime').checked =
-      newSettings.platforms.prime.skipAds);
-  document.getElementById('toggle-youtube-ads') &&
-    (document.getElementById('toggle-youtube-ads').checked =
-      newSettings.platforms.youtube.skipPlatformAds);
-  document.getElementById('toggle-youtube-promos') &&
-    (document.getElementById('toggle-youtube-promos').checked =
-      newSettings.platforms.youtube.skipCreatorPromos);
+  const primeToggle = document.getElementById('toggle-prime');
+  if (primeToggle) primeToggle.checked = newSettings.platforms.prime.skipAds;
+
+  const youtubeAdsToggle = document.getElementById('toggle-youtube-ads');
+  if (youtubeAdsToggle) {
+    youtubeAdsToggle.checked = newSettings.platforms.youtube.skipPlatformAds;
+  }
+
+  const youtubePromosToggle = document.getElementById('toggle-youtube-promos');
+  if (youtubePromosToggle) {
+    youtubePromosToggle.checked = newSettings.platforms.youtube.skipCreatorPromos;
+  }
 });
 
-document.querySelector('[data-i18n="settings_link"]').textContent =
-  chrome.i18n.getMessage('settings_link') || 'Settings';
+const settingsLink = document.querySelector('[data-i18n="settings_link"]');
+if (settingsLink) {
+  settingsLink.textContent = chrome.i18n.getMessage('settings_link') || 'Settings';
+}
 
-render();
+render().catch((error) => {
+  console.error('[Skipper:popup] Failed to render', error);
+  if (root) {
+    root.innerHTML =
+      '<p class="promo-list__empty">Unable to load Skipper. Try reloading the extension.</p>';
+  }
+});
