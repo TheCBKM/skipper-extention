@@ -116,11 +116,19 @@ Update the domain if you host elsewhere.
 
 ---
 
+## Store images (ready to upload)
+
+| Slot | File |
+|------|------|
+| Global screenshot | `store-assets/screenshot-1280x800.png` |
+| Small promo tile | `store-assets/screenshot-440x280.png` |
+| Marquee promo tile | `store-assets/screenshot-1400x560.png` |
+
 ## Suggested screenshot captions
 
-1. **Toolbar popup** — “Control ad skipping per platform from one simple popup”
-2. **YouTube promos** — “See detected creator promo segments on YouTube watch pages”
-3. **Settings** — “Full settings page with clear toggles for each feature”
+1. **Global screenshot** — “Control ad skipping per platform from one simple popup”
+2. **Small promo tile** — “Skip ads on Hotstar, Prime Video, and YouTube”
+3. **Marquee promo** — “Skip video ads automatically while you watch”
 
 ---
 

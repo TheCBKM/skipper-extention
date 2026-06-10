@@ -2,3 +2,4 @@
 *.zip
 .cursor/
 dist/
+store-assets/node_modules/

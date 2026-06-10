@@ -49,20 +49,22 @@ Chrome requires a **public HTTPS URL** because Skipper:
 
 ### 3. Prepare store images
 
-| Asset | Size | Required | Notes |
-|-------|------|----------|-------|
-| **Store icon** | 128×128 PNG | Yes | Use `icons/128.png` |
-| **Screenshots** | 1280×800 or 640×400 | At least 1 | Capture popup + a video site |
-| **Small promo tile** | 440×280 | Optional | Marketing |
-| **Marquee promo** | 1400×560 | Optional | Marketing |
+Pre-built assets are in [`store-assets/`](../store-assets/):
 
-**Screenshot ideas:**
+| Asset | File | Size |
+|-------|------|------|
+| **Global screenshot** | `store-assets/screenshot-1280x800.png` | 1280×800 |
+| **Small promo tile** | `store-assets/screenshot-440x280.png` | 440×280 |
+| **Marquee promo** | `store-assets/screenshot-1400x560.png` | 1400×560 |
+| **Store icon** | `icons/128.png` | 128×128 |
 
-1. Skipper popup on YouTube with promo intervals visible
-2. Options page showing all three platforms
-3. YouTube playing with “Fast forwarding the promo…” overlay (optional)
+Upload the three PNGs above to the Chrome Web Store listing. To regenerate after UI changes:
 
-Use macOS Screenshot or Chrome DevTools device mode to hit exact dimensions.
+```bash
+cd store-assets
+npx playwright install chromium
+node generate-screenshots.mjs
+```
 
 ### 4. Verify developer account
 
