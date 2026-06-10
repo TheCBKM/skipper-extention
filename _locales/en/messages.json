@@ -1,9 +1,12 @@
 {
   "name": {
+    "message": "Skipper — Skip Video Ads"
+  },
+  "short_name": {
     "message": "Skipper"
   },
   "description": {
-    "message": "Automatically skip ads on Hotstar, Amazon Prime Video, and YouTube"
+    "message": "Automatically skip and fast-forward ads on Hotstar, Prime Video, and YouTube."
   },
   "platform_prime": {
     "message": "Prime Video"
