@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skipper Popup Mockup</title>
+  <style>
+    :root {
+      --skipper-pink: #ffc1c1;
+      --skipper-pink-soft: #ffe0e0;
+      --skipper-ink: #000000;
+      --skipper-ink-muted: rgba(0, 0, 0, 0.55);
+      --skipper-radius-sm: 10px;
+      --skipper-border: 2px solid #000;
+      --skipper-shadow: 3px 3px 0 #000;
+      --skipper-font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --skipper-status-idle: rgba(0, 0, 0, 0.35);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--skipper-font); }
+    .skipper-panel {
+      width: 320px;
+      background: var(--skipper-pink);
+      color: var(--skipper-ink);
+      border: var(--skipper-border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--skipper-shadow);
+    }
+    .skipper-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--skipper-pink-soft);
+      border-bottom: var(--skipper-border);
+    }
+    .skipper-header__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--skipper-radius-sm);
+      border: var(--skipper-border);
+    }
+    .skipper-header__title { margin: 0; font-size: 18px; font-weight: 700; }
+    .skipper-cards { display: flex; flex-direction: column; gap: 10px; padding: 12px; }
+    .platform-card {
+      background: var(--skipper-pink-soft);
+      border: var(--skipper-border);
+      border-radius: var(--skipper-radius-sm);
+      padding: 12px 14px;
+    }
+    .platform-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .platform-card__title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .platform-card__status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--skipper-status-idle);
+    }
+    .platform-card__name { font-size: 14px; font-weight: 600; }
+    .platform-card__status-text {
+      margin: 4px 0 0 16px;
+      font-size: 12px;
+      color: var(--skipper-ink-muted);
+    }
+    .platform-card__badge {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--skipper-ink-muted);
+    }
+    .platform-card__body {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0,0,0,0.12);
+    }
+    .platform-card__sub-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .promo-list__empty {
+      margin: 0;
+      font-size: 12px;
+      color: var(--skipper-ink-muted);
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+    .switch__slider {
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: #000;
+      border: 1.5px solid #000;
+    }
+    .switch__slider::before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      right: 2px;
+      bottom: 2px;
+      border-radius: 50%;
+      background: var(--skipper-pink);
+    }
+    .skipper-footer {
+      padding: 10px 12px 14px;
+      border-top: var(--skipper-border);
+      font-size: 13px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="skipper-panel" id="popup">
+    <header class="skipper-header">
+      <img class="skipper-header__icon" src="../icons/48.png" alt="">
+      <h1 class="skipper-header__title">Skipper</h1>
+    </header>
+    <div class="skipper-cards">
+      <article class="platform-card">
+        <div class="platform-card__header">
+          <div class="platform-card__title-row">
+            <span class="platform-card__status-dot"></span>
+            <span class="platform-card__name">Prime Video</span>
+          </div>
+          <span class="switch"><span class="switch__slider"></span></span>
+        </div>
+        <p class="platform-card__status-text">Not on this site</p>
+      </article>
+      <article class="platform-card">
+        <div class="platform-card__header">
+          <div class="platform-card__title-row">
+            <span class="platform-card__status-dot"></span>
+            <span class="platform-card__name">Hotstar</span>
+          </div>
+          <span class="platform-card__badge">Always on</span>
+        </div>
+        <p class="platform-card__status-text">Enabled when on Hotstar</p>
+      </article>
+      <article class="platform-card">
+        <div class="platform-card__header">
+          <div class="platform-card__title-row">
+            <span class="platform-card__status-dot"></span>
+            <span class="platform-card__name">YouTube</span>
+          </div>
+        </div>
+        <p class="platform-card__status-text">Not on this site</p>
+        <div class="platform-card__body">
+          <p class="promo-list__empty">Open a YouTube video to see detected promos</p>
+          <div class="platform-card__sub-option">
+            <span>Platform ads</span>
+            <span class="switch"><span class="switch__slider"></span></span>
+          </div>
+          <div class="platform-card__sub-option">
+            <span>Creator promos</span>
+            <span class="switch"><span class="switch__slider"></span></span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <footer class="skipper-footer">Settings</footer>
+  </div>
+</body>
+</html>

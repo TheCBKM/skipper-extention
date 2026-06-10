@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1400px;
+      height: 560px;
+      overflow: hidden;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #ffe0e0 0%, #ffc1c1 55%, #f5a8a8 100%);
+      color: #000;
+    }
+    .canvas {
+      width: 1400px;
+      height: 560px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      padding: 48px 72px;
+      gap: 40px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .brand img {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      border: 2px solid #000;
+    }
+    .brand span {
+      font-size: 34px;
+      font-weight: 700;
+    }
+    .copy h1 {
+      font-size: 62px;
+      line-height: 1.02;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .copy p {
+      font-size: 22px;
+      line-height: 1.4;
+      color: rgba(0,0,0,0.62);
+      max-width: 620px;
+    }
+    .platforms {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .platform {
+      padding: 10px 18px;
+      border: 2px solid #000;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.35);
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 2px 2px 0 #000;
+    }
+    .popup-wrap {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    iframe {
+      width: 320px;
+      height: 520px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="copy">
+      <div class="brand">
+        <img src="../icons/128.png" alt="">
+        <span>Skipper</span>
+      </div>
+      <h1>Skip video ads automatically</h1>
+      <p>One extension for Hotstar, Prime Video, and YouTube. Control everything from a clean popup while you watch.</p>
+      <div class="platforms">
+        <span class="platform">Hotstar</span>
+        <span class="platform">Prime Video</span>
+        <span class="platform">YouTube</span>
+      </div>
+    </div>
+    <div class="popup-wrap">
+      <iframe src="popup-mockup.html" scrolling="no"></iframe>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1280px;
+      height: 800px;
+      overflow: hidden;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #ffc1c1;
+      color: #000;
+    }
+    .canvas {
+      width: 1280px;
+      height: 800px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      align-items: center;
+      padding: 64px 80px;
+      gap: 48px;
+    }
+    .copy h1 {
+      font-size: 56px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .copy p {
+      font-size: 24px;
+      line-height: 1.45;
+      color: rgba(0,0,0,0.65);
+      max-width: 560px;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .badge {
+      padding: 10px 16px;
+      border: 2px solid #000;
+      border-radius: 999px;
+      background: #ffe0e0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .popup-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    iframe {
+      width: 320px;
+      height: 520px;
+      border: none;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="copy">
+      <h1>Skip the ads.<br>Keep the show.</h1>
+      <p>Automatically skip and fast-forward ads on Hotstar, Prime Video, and YouTube with simple per-platform toggles.</p>
+      <div class="badges">
+        <span class="badge">Hotstar</span>
+        <span class="badge">Prime Video</span>
+        <span class="badge">YouTube</span>
+      </div>
+    </div>
+    <div class="popup-wrap">
+      <iframe src="popup-mockup.html" scrolling="no"></iframe>
+    </div>
+  </div>
+</body>
+</html>

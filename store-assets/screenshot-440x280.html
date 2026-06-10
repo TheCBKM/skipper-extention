@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 440px;
+      height: 280px;
+      overflow: hidden;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #ffc1c1;
+      color: #000;
+    }
+    .canvas {
+      width: 440px;
+      height: 280px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 14px;
+      border: 2px solid #000;
+      flex-shrink: 0;
+    }
+    .copy h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .copy p {
+      font-size: 14px;
+      line-height: 1.35;
+      color: rgba(0,0,0,0.65);
+      max-width: 280px;
+    }
+    .tags {
+      display: flex;
+      gap: 6px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border: 2px solid #000;
+      border-radius: 999px;
+      background: #ffe0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <img class="icon" src="../icons/128.png" alt="">
+    <div class="copy">
+      <h1>Skipper</h1>
+      <p>Skip ads on Hotstar, Prime Video, and YouTube.</p>
+      <div class="tags">
+        <span class="tag">Auto skip</span>
+        <span class="tag">Simple toggles</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

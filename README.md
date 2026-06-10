@@ -18,6 +18,8 @@ chmod +x scripts/package-extension.sh
 
 Upload `dist/skipper-v<version>.zip` to the [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole).
 
+Store listing images are in [`store-assets/`](store-assets/) (1280×800, 440×280, 1400×560). Regenerate with `node store-assets/generate-screenshots.mjs` after installing Playwright Chromium.
+
 ## Publishing
 
 See **[docs/CHROME_WEB_STORE.md](docs/CHROME_WEB_STORE.md)** for the full step-by-step guide and **[docs/STORE_LISTING.md](docs/STORE_LISTING.md)** for copy-paste listing content.
