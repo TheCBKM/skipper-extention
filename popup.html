@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <title>Skipper</title>
+</head>
+
+<body>
+    <div class="tabs">
+        <button class="tab active" data-tab="general">General</button>
+        <button class="tab" data-tab="youtube">YouTube</button>
+    </div>
+
+    <div id="general" class="tab-panel active">
+        <div class="container">
+            <div class="header">
+                <div class="headerIcon">
+                    <img src="./icons/48.png" alt="Skipper icon">
+                </div>
+                <div class="headerText">Skipper</div>
+            </div>
+            <div class="form">
+                <div class="smallContainer">
+                    <div class="label">Skip Prime Video ads</div>
+                    <label class="switch">
+                        <input type="checkbox" name="ContinueWatching" id="ContinueWatching" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="smallContainer">
+                    <div class="label">Hotstar ad blocking</div>
+                    <div class="status">Always on</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="youtube" class="tab-panel">
+        <div class="youtube-panel">
+            <h2>Detected promos</h2>
+            <div id="intervals"></div>
+            <p class="youtube-hint">Open a YouTube watch page to detect promo segments.</p>
+            <label class="youtube-toggle">
+                <input type="checkbox" id="ccOption" checked />
+                <span>Fast-forward creator promos</span>
+            </label>
+            <label class="youtube-toggle">
+                <input type="checkbox" id="yOption" checked />
+                <span>Fast-forward YouTube ads</span>
+            </label>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+    <script src="content/prime/options.js"></script>
+    <script src="popup-youtube.js"></script>
+    <script src="popup-tabs.js"></script>
+</body>
+
+</html>

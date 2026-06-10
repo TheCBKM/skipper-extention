@@ -1,0 +1,1 @@
+"use strict"; setInterval((() => { const e = document.querySelector("#ad-video-container"); if (e && e.checkVisibility()) { const t = e.querySelector("video"); t && (t.currentTime = isNaN(t.duration) ? 0 : t.duration) } }), 250);
